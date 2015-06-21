@@ -1,23 +1,26 @@
 (function(angular) {
-    angular.module('shopping')
-        .controller('ShoppingMainController', function() {
-            var self = this;
 
-            self.currentStep = 1;
+    function ShoppingMainController($scope) {
+        var self = this;
 
-            self.steps = [
-                'templates/step1.html',
-                'templates/step2.html',
-                'templates/step3.html',
-                'templates/step4.html'
-            ];
+        this.currentStep = 0;
 
-            this.back = function() {
-                self.currentStep !== 1 ? self.currentStep-- : 1;
-            };
+        this.steps = [
+            '/templates/step1.html',
+            '/templates/step2.html',
+            '/templates/step3.html',
+            '/templates/step4.html'
+        ];
 
-            this.forward = function() {
-                self.currentStep !== 4 ? self.currentStep++ : 4;
-            }
-        });
+        this.back = function() {
+            self.currentStep !== 0 ? self.currentStep-- : 0;
+        };
+
+        this.forward = function() {
+            self.currentStep !== 3 ? self.currentStep++ : 3;
+        }
+    }
+
+    angular.module('shopping', [])
+        .controller('ShoppingMainController', ShoppingMainController);
 })(window.angular);

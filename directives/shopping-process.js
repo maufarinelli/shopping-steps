@@ -1,9 +1,10 @@
 (function(angular) {
-    angular.module('shopping', [])
+    angular.module('shopping')
         .directive('shoppingMain', function() {
             return {
                 restrict: 'E',
-                templateURL: 'templates/shopping-main.html',
+                templateURL: 'shopping-main.html',
+                replace: true,
                 controllerAs: 'main',
                 controller: 'ShoppingMainController'
             }
