@@ -1,0 +1,16 @@
+{
+  "name": "shopping-steps",
+  "version": "0.0.1",
+  "description": "An example of a shopping card process, step by step",
+  "author": "Mauricio Farinelli",
+  "scripts": {
+
+  },
+  "devDependencies": {
+    "angular": "^1.4.0",
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "express": "^4.13.0",
+    "lodash": "^3.9.3"
+  }
+}
