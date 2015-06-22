@@ -1,5 +1,4 @@
 (function(angular) {
-
     function ShoppingMainController($scope) {
         var self = this;
 
@@ -21,6 +20,6 @@
         }
     }
 
-    angular.module('shopping', [])
+    angular.module('shopping')
         .controller('ShoppingMainController', ShoppingMainController);
 })(window.angular);

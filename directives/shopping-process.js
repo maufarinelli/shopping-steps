@@ -3,8 +3,7 @@
         .directive('shoppingMain', function() {
             return {
                 restrict: 'E',
-                templateURL: 'shopping-main.html',
-                replace: true,
+                templateUrl: '../templates/shopping-main.html',
                 controllerAs: 'main',
                 controller: 'ShoppingMainController'
             }
