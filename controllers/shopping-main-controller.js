@@ -5,7 +5,7 @@
         this.currentStep = 0;
 
         this.steps = [
-            '/templates/step1.html',
+            '/templates/personal-info.html',
             '/templates/step2.html',
             '/templates/step3.html',
             '/templates/step4.html'
