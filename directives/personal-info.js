@@ -1,11 +1,13 @@
 (function(angular) {
+    function personalInfo() {
+        return {
+            restrict: 'E',
+            require: '^main',
+            controllerAs: 'personal',
+            controller: 'PersonalInfoController'
+        }
+    }
+
     angular.module('shopping')
-        .directive('personalInfo', function() {
-            return {
-                restrict: 'E',
-                require: '^main',
-                controllerAs: 'personal',
-                controller: 'PersonalInfoController'
-            }
-        });
+        .directive('personalInfo', personalInfo);
 })(window.angular);

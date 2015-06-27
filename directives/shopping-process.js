@@ -1,11 +1,13 @@
 (function(angular) {
+    function shoppingMain() {
+        return {
+            restrict: 'E',
+            templateUrl: '../templates/shopping-main.html',
+            controllerAs: 'main',
+            controller: 'ShoppingMainController'
+        }
+    }
+
     angular.module('shopping')
-        .directive('shoppingMain', function() {
-            return {
-                restrict: 'E',
-                templateUrl: '../templates/shopping-main.html',
-                controllerAs: 'main',
-                controller: 'ShoppingMainController'
-            }
-        });
+        .directive('shoppingMain', shoppingMain);
 })(window.angular);

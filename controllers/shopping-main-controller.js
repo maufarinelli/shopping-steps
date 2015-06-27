@@ -6,10 +6,12 @@
 
         this.steps = [
             '/templates/personal-info.html',
-            '/templates/step2.html',
+            '/templates/shipping.html',
             '/templates/step3.html',
             '/templates/step4.html'
         ];
+
+        this.user = {};
 
         this.back = function() {
             self.currentStep !== 0 ? self.currentStep-- : 0;

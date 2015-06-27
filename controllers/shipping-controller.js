@@ -1,5 +1,5 @@
 (function(angular) {
-    function PersonalInfoController($scope) {
+    function ShippingController($scope) {
         var self = this;
 
         this.updateModel = function() {
@@ -10,5 +10,5 @@
     }
 
     angular.module('shopping')
-        .controller('PersonalInfoController', PersonalInfoController);
+        .controller('ShippingController', ShippingController);
 })(window.angular);
