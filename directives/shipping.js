@@ -3,7 +3,7 @@
         return {
             restrict: 'E',
             require: '^main',
-            controllerAs: 'shipping',
+            controllerAs: 'ship',
             controller: 'ShippingController'
         }
     }

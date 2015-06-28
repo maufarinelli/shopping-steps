@@ -2,11 +2,32 @@
     <h2>Step 2 - Shipping details</h2>
 
     <form novalidate action="form-horizontal">
-        <fieldset class="form-group">
-            <label class="col-sm-1 control-label" for="name">Name:</label>
-            <div class="col-sm-8">
-                <input class="form-control" type="text" id="name" ng-model="personal.user.name" required>
+        <fieldset>
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="ship.user.shippingType" ng-value="normal">
+                    Normal: $3.00
+                </label>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="ship.user.shippingType" value="express">
+                    Express: $8.00
+                </label>
+            </div>
+
+            <div class="radio">
+                <label>
+                    <input type="radio" ng-model="ship.user.shippingType" value="one-day">
+                    1-day shipping: $16.00
+                </label>
             </div>
         </fieldset>
     </form>
+
+    <footer class="form-group">
+        <button class="btn btn-default" type="button" ng-click="ship.back()">Back</button>
+        <button class="btn btn-primary" type="button" ng-click="ship.updateModel()">Next</button>
+    </footer>
 </shipping>
