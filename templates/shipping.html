@@ -5,21 +5,21 @@
         <fieldset>
             <div class="radio">
                 <label>
-                    <input type="radio" ng-model="ship.user.shippingType" ng-value="normal">
+                    <input type="radio" ng-model="ship.user.shippingType" value="normal" ng-change="ship.updateModel()">
                     Normal: $3.00
                 </label>
             </div>
 
             <div class="radio">
                 <label>
-                    <input type="radio" ng-model="ship.user.shippingType" value="express">
+                    <input type="radio" ng-model="ship.user.shippingType" value="express" ng-change="ship.updateModel()">
                     Express: $8.00
                 </label>
             </div>
 
             <div class="radio">
                 <label>
-                    <input type="radio" ng-model="ship.user.shippingType" value="one-day">
+                    <input type="radio" ng-model="ship.user.shippingType" value="oneDay" ng-change="ship.updateModel()">
                     1-day shipping: $16.00
                 </label>
             </div>
@@ -28,6 +28,6 @@
 
     <footer class="form-group">
         <button class="btn btn-default" type="button" ng-click="ship.back()">Back</button>
-        <button class="btn btn-primary" type="button" ng-click="ship.updateModel()">Next</button>
+        <button class="btn btn-primary" type="button" ng-click="ship.forward()">Next</button>
     </footer>
 </shipping>

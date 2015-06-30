@@ -7,7 +7,7 @@
         this.steps = [
             '/templates/personal-info.html',
             '/templates/shipping.html',
-            '/templates/step3.html',
+            '/templates/payment.html',
             '/templates/step4.html'
         ];
 

@@ -1,10 +1,12 @@
-(function(angular) {
-    function ShippingController($scope) {
+(function(angular){
+    function PaymentController() {
         var self = this;
 
         var init = function() {
             self.user = {
-                shippingType: $scope.main.user.shippingType ? $scope.main.user.shippingType : 'normal',
+                paymentCard: $scope.main.user.paymentCard ? $scope.main.user.paymentCard : 'visa',
+                cardName: $scope.main.user.cardName ? $scope.main.user.cardName : '',
+                cardNumber: $scope.main.user.cardNumber ? $scope.main.user.cardNumber : ''
             }
         };
 
@@ -25,5 +27,5 @@
     }
 
     angular.module('shopping')
-        .controller('ShippingController', ShippingController);
+        .controller('PaymentController', PaymentController);
 })(window.angular);
