@@ -1,27 +1,25 @@
 (function(angular){
-    function PaymentController() {
-        var self = this;
+    function PaymentController($scope) {
+        var self = this,
+            mainController = $scope.main;
 
-        var init = function() {
+        function init() {
             self.user = {
-                paymentCard: $scope.main.user.paymentCard ? $scope.main.user.paymentCard : 'visa',
-                cardName: $scope.main.user.cardName ? $scope.main.user.cardName : '',
-                cardNumber: $scope.main.user.cardNumber ? $scope.main.user.cardNumber : ''
+                paymentCard: mainController.user.paymentCard ? mainController.user.paymentCard : 'visa',
+                cardName: mainController.user.cardName ? mainController.user.cardName : '',
+                cardNumber: mainController.user.cardNumber ? mainController.user.cardNumber : ''
             }
-        };
-
-        this.updateModel = function() {
-            $scope.main.user = angular.extend($scope.main.user, this.user);
         }
 
         this.back = function() {
-            $scope.main.back();
-        }
+            mainController.updateModel(this.user);
+            mainController.back();
+        };
 
         this.forward = function() {
-            self.updateModel();
-            $scope.main.forward();
-        }
+            mainController.updateModel(this.user);
+            mainController.forward();
+        };
 
         init();
     }

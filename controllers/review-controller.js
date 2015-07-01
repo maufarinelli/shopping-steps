@@ -1,5 +1,5 @@
 (function(angular){
-    function ReviewController() {
+    function ReviewController($scope) {
         var self = this;
 
         var init = function() {

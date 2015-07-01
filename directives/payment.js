@@ -2,7 +2,7 @@
     function payment() {
         return {
             restrict: 'E',
-            templateUrl: ''
+            require: '^main',
             controllerAs: 'payment',
             controller: 'PaymentController'
         }

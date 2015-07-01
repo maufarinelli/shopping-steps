@@ -8,10 +8,14 @@
             '/templates/personal-info.html',
             '/templates/shipping.html',
             '/templates/payment.html',
-            '/templates/step4.html'
+            '/templates/review.html'
         ];
 
         this.user = {};
+
+        this.updateModel = function(model) {
+            self.user = angular.extend(self.user, model);
+        }
 
         this.back = function() {
             self.currentStep !== 0 ? self.currentStep-- : 0;

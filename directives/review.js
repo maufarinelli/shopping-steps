@@ -2,7 +2,7 @@
     function review() {
         return {
             restrict: 'E',
-            templateUrl: ''
+            require: '^main',
             controllerAs: 'review',
             controller: 'ReviewController'
         }

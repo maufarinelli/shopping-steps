@@ -1,7 +1,7 @@
 <shipping>
     <h2>Step 2 - Shipping details</h2>
 
-    <form novalidate action="form-horizontal">
+    <form name="shippingForm.$invalid" novalidate action="form-horizontal">
         <fieldset>
             <div class="radio">
                 <label>
@@ -28,6 +28,6 @@
 
     <footer class="form-group">
         <button class="btn btn-default" type="button" ng-click="ship.back()">Back</button>
-        <button class="btn btn-primary" type="button" ng-click="ship.forward()">Next</button>
+        <button class="btn btn-primary" type="button" ng-disabled="shippingForm.$invalid" ng-click="ship.forward()">Next</button>
     </footer>
 </shipping>

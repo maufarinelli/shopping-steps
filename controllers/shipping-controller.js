@@ -1,25 +1,23 @@
 (function(angular) {
     function ShippingController($scope) {
-        var self = this;
+        var self = this,
+            mainController = $scope.main;
 
-        var init = function() {
+        function init() {
             self.user = {
-                shippingType: $scope.main.user.shippingType ? $scope.main.user.shippingType : 'normal',
+                shippingType: mainController.user.shippingType ? mainController.user.shippingType : 'normal',
             }
         };
 
-        this.updateModel = function() {
-            $scope.main.user = angular.extend($scope.main.user, this.user);
-        }
-
         this.back = function() {
-            $scope.main.back();
-        }
+            mainController.updateModel(this.user);
+            mainController.back();
+        };
 
         this.forward = function() {
-            self.updateModel();
-            $scope.main.forward();
-        }
+            mainController.updateModel(this.user);
+            mainController.forward();
+        };
 
         init();
     }

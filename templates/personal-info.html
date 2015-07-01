@@ -1,7 +1,7 @@
 <personal-info>
 	<h2>Step 1 - Fill in the fields bellow</h2>
 
-	<form novalidate action="form-horizontal">
+	<form name="personalForm" novalidate action="form-horizontal">
 		<fieldset class="form-group">
 			<label class="col-sm-1 control-label" for="name">Name:</label>
 			<div class="col-sm-8">
@@ -32,7 +32,7 @@
 	</form>
 
 	<footer class="form-group">
-		<button class="btn btn-primary" type="button" ng-click="personal.updateModel()">Next</button>
+		<button class="btn btn-primary" type="button" ng-disabled="personalForm.$invalid" ng-click="personal.forward()">Next</button>
 	</footer>
 </personal-info>
 

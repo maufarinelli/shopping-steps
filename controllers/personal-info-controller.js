@@ -1,21 +1,21 @@
 (function(angular) {
     function PersonalInfoController($scope) {
-        var self = this;
+        var self = this,
+            mainController = $scope.main;
 
-        var init = function() {
+        function init() {
             self.user = {
-                name: $scope.main.user.name ? $scope.main.user.name : '',
-                email: $scope.main.user.email ? $scope.main.user.email : '', 
-                phone: $scope.main.user.phone ? $scope.main.user.phone : '',
-                address: $scope.main.user.address ? $scope.main.user.address : ''
+                name: mainController.user.name ? mainController.user.name : '',
+                email: mainController.user.email ? mainController.user.email : '', 
+                phone: mainController.user.phone ? mainController.user.phone : '',
+                address: mainController.user.address ? mainController.user.address : ''
             }
-        };
-
-        this.updateModel = function() {
-            $scope.main.user = this.user;
-            
-            $scope.main.forward();
         }
+
+        this.forward = function() {
+            mainController.updateModel(this.user);
+            mainController.forward();
+        };
 
         init();
     }

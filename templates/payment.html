@@ -42,6 +42,6 @@
 
     <footer class="form-group">
         <button class="btn btn-default" type="button" ng-click="payment.back()">Back</button>
-        <button class="btn btn-primary" type="button" ng-click="payment.forward()">Next</button>
+        <button class="btn btn-primary" type="button" ng-disabled="personalForm.$invalid" ng-click="payment.forward()">Next</button>
     </footer>
 </payment>
