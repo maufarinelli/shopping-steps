@@ -9,7 +9,7 @@
                 email: mainController.user.email ? mainController.user.email : '', 
                 phone: mainController.user.phone ? mainController.user.phone : '',
                 address: mainController.user.address ? mainController.user.address : ''
-            }
+            };
         }
 
         this.forward = function() {

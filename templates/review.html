@@ -1,1 +1,25 @@
-<h2>Step 4</h2>
+<review>
+    <h2>Step 4 - Review page</h2>
+
+    <h3 ng-bind="::review.product.item"></h3>
+    <img ng-src="{{::review.product.image}}" alt="{{::review.product.item}}" />
+
+    <h4>Personal Information - <a href="" ng-click="review.edit(review.STEPS.personal)">edit</a></h4>
+    <p>Name: <span ng-bind="::review.user.name"></span></p>
+    <p>Email: <span ng-bind="::review.user.email"></span></p>
+    <p>Phone: <span ng-bind="::review.user.phone"></span></p>
+    <p>Address: <span ng-bind="::review.user.address"></span></p>
+
+    <h4>Shipping Information  - <a href="" ng-click="review.edit(review.STEPS.shipping)">edit</a></h4>
+    <p>Shipping: <span ng-bind="::review.user.shippingType | uppercase"></span></p>
+
+    <h4>Payment Information  - <a href="" ng-click="review.edit(review.STEPS.payment)">edit</a></h4>
+    <p>Credit Card: <span ng-bind="::review.user.paymentCard | uppercase"></span></p>
+    <p>Name on the card: <span ng-bind="::review.user.cardName"></span></p>
+    <p>Credit Card Number: <span ng-bind="::review.user.cardNumber"></span></p>
+
+    <footer class="form-group">
+        <button class="btn btn-default" type="button" ng-click="review.back()">Back</button>
+        <button class="btn btn-primary" type="button" ng-click="review.forward()">Confirm</button>
+    </footer>
+</review>

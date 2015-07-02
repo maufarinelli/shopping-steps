@@ -1,27 +1,39 @@
 (function(angular){
-    function ReviewController($scope) {
-        var self = this;
+    function ReviewController($scope, STEPS) {
+        var self = this,
+            mainController = $scope.main;
 
         var init = function() {
             self.user = {
-                paymentCard: $scope.main.user.paymentCard ? $scope.main.user.paymentCard : 'visa',
-                cardName: $scope.main.user.cardName ? $scope.main.user.cardName : '',
-                cardNumber: $scope.main.user.cardNumber ? $scope.main.user.cardNumber : ''
-            }
+                name: mainController.user.name,
+                email: mainController.user.email,
+                phone: mainController.user.phone,
+                address: mainController.user.address,
+                shippingType: mainController.user.shippingType,
+                paymentCard: mainController.user.paymentCard,
+                cardName: mainController.user.cardName,
+                cardNumber: mainController.user.cardNumber
+            };
+
+            self.product = {
+                item: 'CD - Samba Esquema Noise, Mundo Livre S/A',
+                image: '/images/samba_esquema_noise.jpg'
+            };
         };
 
-        this.updateModel = function() {
-            $scope.main.user = angular.extend($scope.main.user, this.user);
-        }
+        self.STEPS = STEPS;
+
+        this.edit = function(step) {
+            mainController.goTo(step);
+        };
 
         this.back = function() {
-            $scope.main.back();
-        }
+            mainController.back();
+        };
 
         this.forward = function() {
-            self.updateModel();
-            $scope.main.forward();
-        }
+            mainController.forward();
+        };
 
         init();
     }
