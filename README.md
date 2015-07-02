@@ -1,2 +1,2 @@
 # shopping-steps
-A example of shopping process - just to study angular.js
+A example of shopping card process with multiple steps - just to study AngularJS
